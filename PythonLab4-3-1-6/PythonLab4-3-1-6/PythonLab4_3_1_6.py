@@ -2,6 +2,9 @@
 
 # Defines the 'is_year_leap' function
 def is_year_leap(year):
+	#If the user input is before 1582 the below ouput is shown;
+	if year < 1582:
+		print("Not within the Gregorian calendar period")  #
 	# if the year number isn't divisible by four, it's a common year;
 	if year % 4:
 		return False
@@ -16,8 +19,8 @@ def is_year_leap(year):
 		return True
 
 # "Short testing code"
-test_data = [1900, 2000, 2016, 1987, 1985]	# The 5th element added, 1985 should be False, but has 
-test_results = [False, True, True, False, True] # been incorrectly entered to examine the testing code.
+test_data = [1900, 2000, 2016, 1987, 1985, 1581]		# Extra elements added, to examine the testing code 
+test_results = [False, True, True, False, True, False]	# 1985 should be False, but has been incorrectly entered .
 for i in range(len(test_data)):
 	year = test_data[i]
 	print(year,"-> ",end="")
